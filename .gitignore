@@ -11,6 +11,7 @@ venv/
 ENV/
 env/
 .env/
+.env
 
 # Flask uploads/static (optional: if you don't want to store images or generated files)
 uploads/
