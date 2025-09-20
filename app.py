@@ -15,7 +15,7 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Roboflow REST API details
 MODEL_ID = "cattle-buffalo-breeds-q5sgq-79kyd-lijeg/1"
-API_KEY = "Z90xG6uGK68wUlLfYhPZ"
+API_KEY = os.getenv("ROBOFLOW_API_KEY")
 
 # Gemini API call
 def get_breed_info(breed_name: str) -> dict:
