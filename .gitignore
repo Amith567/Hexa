@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*.pyd
+
+# Virtual environment
+venv/
+ENV/
+env/
+.env/
+
+# Flask uploads/static (optional: if you don't want to store images or generated files)
+uploads/
+instance/
+*.sqlite3
+
+# IDEs and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+.eggs/
+
+
+# Windows
+desktop.ini
+
+# pip cache
+pip-log.txt
+pip-delete-this-directory.txt

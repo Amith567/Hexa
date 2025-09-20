@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breed Identifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body><div class="container">
+    <h1 class="title">Cattle & Buffalo Breed Identifier</h1>
+    <form method="post" enctype="multipart/form-data" class="button-div">
+       <div> <label>Select an image : </label>
+        <input type="file" name="image" required class="file-btn"></div>
+        <input type="submit" value="Get Info">
+    </form>
+<div class="content">
+    {% if uploaded_image_url %}
+        <h3>Uploaded Image:</h3>
+        <img src="{{ uploaded_image_url }}" alt="image" width="300">
+    {% endif %}
+
+    {% if breed_info %}
+        {% if breed_info.error %}
+            <p class="error">Error: {{ breed_info.error }}</p>
+        {% else %}
+            {% if breed_info.default_used %}
+                <p class="notice">No breed detected. Showing breed: Jersey.</p>
+            {% endif %}
+           <h2>Breed : {{ breed_info.name }}</h2>
+<div class="breed-info">
+    {% for key, value in breed_info.items() %}
+        {% if key != 'name' and key != 'error' and key != 'default_used' %}
+            <div class="breed-item">
+                <div class="breed-title">{{ key.replace('_', ' ').title() }}</div>
+                <div class="breed-content">{{ value }}</div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+        {% endif %}
+    {% endif %}</div></div>
+</body>
+</html>
